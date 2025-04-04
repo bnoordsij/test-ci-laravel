@@ -46,4 +46,18 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /** @return string */
+
+    public function test_function() {
+        // this is a test function
+
+        return;
+
+    }
+
+    public function incorrect() : bool
+    {
+        return 'een hele boel';
+    }
 }
