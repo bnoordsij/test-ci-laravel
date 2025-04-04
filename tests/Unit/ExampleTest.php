@@ -13,6 +13,6 @@ class ExampleTest extends TestCase
 
     public function test_that_fails(): void
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 }
