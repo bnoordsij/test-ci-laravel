@@ -1,0 +1,15 @@
+name: Echo
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get result
+        run: echo "Hello World!"
