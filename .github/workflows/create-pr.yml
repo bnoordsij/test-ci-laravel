@@ -1,9 +1,10 @@
 name: Create PR on New Branch
 
 on:
+  workflow_dispatch:
   create:
     branches:
-      - '*'
+      - 'master'
 
 jobs:
   create_pr:
@@ -18,6 +19,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           title: "Automatically created PR for new branch"
           branch: ${{ github.ref }}
-          base: 'main'
+          base: 'master'
 
 # -
