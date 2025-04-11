@@ -1,0 +1,29 @@
+name: Create PR on New Branch
+
+on:
+  create:
+    branches:
+      - 'master'
+
+# also double check read/write and create/approve permission here
+# https://github.com/bnoordsij/test-ci-laravel/settings/actions#Workflow permissions
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  create_pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: ${{ github.ref }}
+          branch: ${{ github.ref }}
+          # base: 'master'
+
+#
