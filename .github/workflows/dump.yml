@@ -14,5 +14,5 @@ jobs:
       - name: Dump Variables
         run: |
           echo "Dumping Variables"
-          env
+          env | sort
 #
