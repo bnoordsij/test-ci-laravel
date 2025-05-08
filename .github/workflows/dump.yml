@@ -1,4 +1,4 @@
-name: Echo
+name: Dump
 
 on:
   push:
@@ -7,10 +7,12 @@ on:
     branches: [ "master" ]
 
 jobs:
-  echo:
+  dump_variables:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Get result
-        run: echo "Hello World!"
+      - name: Dump Variables
+        run: |
+          echo "Dumping Variables"
+          env
 #
